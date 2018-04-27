@@ -119,8 +119,8 @@ $(document).ready(function() {
             //Changes to HTML here
             $("#statBoard").text("ABILITIES");
             $("#enemyBox").text("ENEMIES");
-            $("#enemyBox").css({"border": "solid"})
-            $("#enemyBox").css({"width": "100%"})
+            $("#enemyBox").css({"border": "solid"});
+            $("#enemyBox").css({"width": "100%"});
             //Change statBoard
             if(selectedChar === "Ghost")
             {
@@ -132,13 +132,14 @@ $(document).ready(function() {
                 audioElement.autoplay = true;
                 //Append variable to html
                 audio.append(audioElement);
-                $(".statBoard0").text("");
-                $(".statBoard1").text("Character Selected: " + selectedChar)
-                $(".statBoard2").text("Basic Attack: Do base damage. Gain 1 energy.")
-                $(".statBoard3").text("Stimpack: Take self-inflicted damage. Deal bonus damage. Lose 2 energy.")
-                $(".statBoard4").text("Explosive Charge: After three charges set, deal massive damage. Lose 1 energy.")
-                $(".statBoard5").text("Cloak: Prevent damage this turn. Lose 2 energy.")
-                $(".statBoard6").text("Choose an enemy.")
+                $(".statBoard0").text("Character Selected: " + selectedChar);
+                $(".statBoard1").text("Race: TERRAN");
+                $(".statBoard2").text("Basic Attack: Do base damage. Gain 1 energy.");
+                $(".statBoard3").text("Stimpack: Take self-inflicted damage. Deal bonus damage. Lose 2 energy.");
+                $(".statBoard4").text("Explosive Charge: After three charges set, deal massive damage. Lose 1 energy.");
+                $(".statBoard5").text("Cloak: Prevent damage this turn. Lose 2 energy.");
+                $(".statBoard6").text("Choose an enemy.");
+                $(".statBoard7").text("");
             }
             else if(selectedChar === "Hydralisk")
             {
@@ -150,13 +151,14 @@ $(document).ready(function() {
                 audioElement.autoplay = true;
                 //Append variable to html
                 audio.append(audioElement);
-                $(".statBoard0").text("");
-                $(".statBoard1").text("Character Selected: " + selectedChar)
-                $(".statBoard2").text("Basic Attack: Do base damage. Gain 1 energy.")
-                $(".statBoard3").text("Spine Flurry: Does 1-3 times base damage. Double damage received. Lose 2 energy.")
-                $(".statBoard4").text("Augmented Carapace: Damage reduced. Damage received reduced. Lose 1 energy.")
-                $(".statBoard5").text("Regenerate: Heal for random amount. Deal no damage. Lose 3 energy.")
-                $(".statBoard6").text("Choose an enemy.")
+                $(".statBoard0").text("Character Selected: " + selectedChar);
+                $(".statBoard1").text("Race: ZERG");
+                $(".statBoard2").text("Basic Attack: Do base damage. Gain 1 energy.");
+                $(".statBoard3").text("Spine Flurry: Does 1-3 times base damage. Double damage received. Lose 2 energy.");
+                $(".statBoard4").text("Augmented Carapace: Damage reduced. Damage received reduced. Lose 1 energy.");
+                $(".statBoard5").text("Regenerate: Heal for random amount. Deal no damage. Lose 3 energy.");
+                $(".statBoard6").text("Choose an enemy.");
+                $(".statBoard7").text("");
             }
             else if(selectedChar === "Dark Templar")
             {
@@ -168,13 +170,14 @@ $(document).ready(function() {
                 audioElement.autoplay = true;
                 //Append variable to html
                 audio.append(audioElement);
-                $(".statBoard0").text("");
-                $(".statBoard1").text("Character Selected: " + selectedChar)
-                $(".statBoard2").text("Basic Attack: Do base damage. Gain 1 energy.")
-                $(".statBoard3").text("Shadow Fury: Do random number of attacks with random damage value. Lose 2 energy.")
-                $(".statBoard4").text("Void Surge: Increment damage output after each time used. Lose 1 energy.")
-                $(".statBoard5").text("Evasion: Take no damage. Deal no damage. Gain 15 life. Lose 2 energy.")
-                $(".statBoard6").text("Choose an enemy.")
+                $(".statBoard0").text("Character Selected: " + selectedChar);
+                $(".statBoard1").text("Race: PROTOSS");
+                $(".statBoard2").text("Basic Attack: Do base damage. Gain 1 energy.");
+                $(".statBoard3").text("Shadow Fury: Do random number of attacks with random damage value. Lose 2 energy.");
+                $(".statBoard4").text("Void Surge: Increment damage output after each time used. Lose 1 energy.");
+                $(".statBoard5").text("Evasion: Take no damage. Deal no damage. Gain 15 life. Lose 2 energy.");
+                $(".statBoard6").text("Choose an enemy.");
+                $(".statBoard7").text("");
             }
             //Prompt user to choose enemy for defender div
             $("#defender").text("SELECT DEFENDER")
@@ -306,13 +309,14 @@ $(document).ready(function() {
             $("#enemy").attr("hp", enemyDmgTaken);
             var enemyDiv = $("#enemy").children();
             $(enemyDiv[2]).text("HP: " + enemyDmgTaken + " / " + enemyMaxHp);
-            $(".statBoard0").text("");
+            $(".statBoard0").text("BASIC ATTACK");
             $(".statBoard1").text("Total Damage Received: " + enemyCharAtk);
             $(".statBoard2").text("Total Damage Dealt: " + heroCharAtk);
-            $(".statBoard3").text("Energy replenished: 1");
+            $(".statBoard3").text("Energy Replenished: 1");
             $(".statBoard4").text("");
             $(".statBoard5").text("");
             $(".statBoard6").text("");
+            $(".statBoard7").text("");
             //Check win/loss condition
             checkWinLoss();
             }
@@ -358,13 +362,14 @@ $(document).ready(function() {
             enemyDmgTaken = enemyHp - 0;
             dmgTaken = playerHp - 0;
             //Update stat board
-            $(".statBoard0").text("");
+            $(".statBoard0").text("NOT ENOUGH ENERGY");
             $(".statBoard1").text("You need more energy to perform this ability.");
             $(".statBoard2").text("Select a different ability.");
             $(".statBoard3").text("");
             $(".statBoard4").text("");
             $(".statBoard5").text("");
             $(".statBoard6").text("");
+            $(".statBoard7").text("");
             }
             else
             {
@@ -398,13 +403,14 @@ $(document).ready(function() {
             var enemyDiv = $("#enemy").children();
             $(enemyDiv[2]).text("HP: " + enemyDmgTaken + " / " + enemyMaxHp);
             //Update HTML
-            $(".statBoard0").text("");
+            $(".statBoard0").text("STIMPACK");
             $(".statBoard1").text("Total Damage Received: " + stimpackDamageTaken);
             $(".statBoard2").text("Total Damage Dealt: " + stimpackDmgDealt);
             $(".statBoard3").text("Damage Received: " + enemyCharAtk);
             $(".statBoard4").text("Self-Inflicted Damage: 10");
             $(".statBoard5").text("Damage Dealt: " + heroCharAtk);
             $(".statBoard6").text("Bonus Damage: " + stimpackRandNum);
+            $(".statBoard7").text("Energy Depleted: 2");
             }
             //Check win/loss condition
             checkWinLoss();
@@ -452,13 +458,14 @@ $(document).ready(function() {
                     enemyDmgTaken = enemyHp - 0;
                     dmgTaken = playerHp - 0;
                     //Update stat board
-                    $(".statBoard0").text("");
+                    $(".statBoard0").text("NOT ENOUGH ENERGY");
                     $(".statBoard1").text("You need more energy to perform this ability.");
                     $(".statBoard2").text("Select a different ability.");
                     $(".statBoard3").text("");
                     $(".statBoard4").text("");
                     $(".statBoard5").text("");
                     $(".statBoard6").text("");
+                    $(".statBoard7").text("");
                 }
                 else
                 {
@@ -491,13 +498,14 @@ $(document).ready(function() {
                         $("#enemy").attr("hp", enemyDmgTaken);
                         var enemyDiv = $("#enemy").children();
                         $(enemyDiv[2]).text("HP: " + enemyDmgTaken + " / " + enemyMaxHp);
-                        $(".statBoard0").text("");
+                        $(".statBoard0").text("EXPLOSIVE CHARGE");
                         $(".statBoard1").text("Total Damage Received: " + enemyCharAtk);
                         $(".statBoard2").text("Total Damage Dealt: " + explosiveChargeDamage);
                         $(".statBoard3").text("Charges: " + specialAttackClick);
                         $(".statBoard4").text("Explosive Charge Damage: " + explosiveChargeRandNum);
-                        $(".statBoard5").text("");
+                        $(".statBoard5").text("Energy Depleted: 1");
                         $(".statBoard6").text("");
+                        $(".statBoard7").text("");
                         console.log("Charges: " + specialAttackClick);
                         console.log("Damage Dealt: " + explosiveChargeDamage);
                         console.log("Damage Received: " + enemyCharAtk);
@@ -513,13 +521,14 @@ $(document).ready(function() {
                         var enemyDiv = $("#enemy").children();
                         $(enemyDiv[2]).text("HP: " + enemyDmgTaken + " / " + enemyMaxHp);
                         }
-                        $(".statBoard0").text("");
+                        $(".statBoard0").text("EXPLOSIVE CHARGE");
                         $(".statBoard1").text("Total Damage Received: " + enemyCharAtk);
                         $(".statBoard2").text("Total Damage Dealt: " + 0);
                         $(".statBoard3").text("Charges: " + specialAttackClick);
                         $(".statBoard4").text("Charges Needed: " + chargesNeeded);
-                        $(".statBoard5").text("");
+                        $(".statBoard5").text("Energy Depleted: 1");
                         $(".statBoard6").text("");
+                        $(".statBoard7").text("");
                         //Check win/loss condition
                         checkWinLoss();
                 }
@@ -567,13 +576,14 @@ $(document).ready(function() {
             enemyDmgTaken = enemyHp - 0;
             dmgTaken = playerHp - 0;
             //Update stat board
-            $(".statBoard0").text("");
+            $(".statBoard0").text("NOT ENOUGH ENERGY");
             $(".statBoard1").text("You need more energy to perform this ability.");
             $(".statBoard2").text("Select a different ability.");
             $(".statBoard3").text("");
             $(".statBoard4").text("");
             $(".statBoard5").text("");
             $(".statBoard6").text("");
+            $(".statBoard7").text("");
             }
             else
             {
@@ -600,13 +610,14 @@ $(document).ready(function() {
             $("#enemy").attr("hp", enemyDmgTaken);
             var enemyDiv = $("#enemy").children();
             $(enemyDiv[2]).text("HP: " + enemyDmgTaken + " / " + enemyMaxHp);
-            $(".statBoard0").text("");
+            $(".statBoard0").text("CLOAK");
             $(".statBoard1").text("Total Damage Received: " + 0);
             $(".statBoard2").text("Total Damage Dealt: " + heroCharAtk);
-            $(".statBoard3").text("");
+            $(".statBoard3").text("Energy Depleted: 2");
             $(".statBoard4").text("");
             $(".statBoard5").text("");
             $(".statBoard6").text("");
+            $(".statBoard7").text("");
             }
             //Check win/loss condition
             checkWinLoss();
@@ -669,13 +680,14 @@ $(document).ready(function() {
             $("#enemy").attr("hp", enemyDmgTaken);
             var enemyDiv = $("#enemy").children();
             $(enemyDiv[2]).text("HP: " + enemyDmgTaken + " / " + enemyMaxHp);
-            $(".statBoard0").text("");
+            $(".statBoard0").text("BASIC ATTACK");
             $(".statBoard1").text("Total Damage Received: " + enemyCharAtk);
             $(".statBoard2").text("Total Damage Dealt: " + heroCharAtk);
-            $(".statBoard3").text("");
+            $(".statBoard3").text("Energy Replenished: 1");
             $(".statBoard4").text("");
             $(".statBoard5").text("");
             $(".statBoard6").text("");
+            $(".statBoard7").text("");
             //Check win/loss condition
             checkWinLoss();
             }
@@ -714,13 +726,14 @@ $(document).ready(function() {
             enemyDmgTaken = enemyHp - 0;
             dmgTaken = playerHp - 0;
             //Update stat board
-            $(".statBoard0").text("");
+            $(".statBoard0").text("NOT ENOUGH ENERGY");
             $(".statBoard1").text("You need more energy to perform this ability.");
             $(".statBoard2").text("Select a different ability.");
             $(".statBoard3").text("");
             $(".statBoard4").text("");
             $(".statBoard5").text("");
             $(".statBoard6").text("");
+            $(".statBoard7").text("");
             }
             else
             {
@@ -758,13 +771,14 @@ $(document).ready(function() {
             $("#enemy").attr("hp", enemyDmgTaken);
             var enemyDiv = $("#enemy").children();
             $(enemyDiv[2]).text("HP: " + enemyDmgTaken + " / " + enemyMaxHp);
-            $(".statBoard0").text("");
+            $(".statBoard0").text("SPINE FLURRY");
             $(".statBoard1").text("Total Damage Received: " + enemyCharAtk);
             $(".statBoard2").text("Total Damage Dealt: " + spineFlurryDmg);
             $(".statBoard3").text("Spines Generated: " + spineFlurryRandNum);
             $(".statBoard4").text("Damage Per Spine: " + heroCharAtk);
-            $(".statBoard5").text("");
+            $(".statBoard5").text("Energy Depleted: 2");
             $(".statBoard6").text("");
+            $(".statBoard7").text("");
             }
             //Check win/loss condition
             checkWinLoss();
@@ -804,13 +818,14 @@ $(document).ready(function() {
             enemyDmgTaken = enemyHp - 0;
             dmgTaken = playerHp - 0;
             //Update stat board
-            $(".statBoard0").text("");
+            $(".statBoard0").text("NOT ENOUGH ENERGY");
             $(".statBoard1").text("You need more energy to perform this ability.");
             $(".statBoard2").text("Select a different ability.");
             $(".statBoard3").text("");
             $(".statBoard4").text("");
             $(".statBoard5").text("");
-            $(".statBoard6").text("");    
+            $(".statBoard6").text("");
+            $(".statBoard7").text("");
             }
             else
             {
@@ -849,13 +864,14 @@ $(document).ready(function() {
             $("#enemy").attr("hp", enemyDmgTaken);
             var enemyDiv = $("#enemy").children();
             $(enemyDiv[2]).text("HP: " + enemyDmgTaken + " / " + enemyMaxHp);
-            $(".statBoard0").text("");
+            $(".statBoard0").text("AUGMENTED CARAPACE");
             $(".statBoard1").text("Total Damage Received: " + reducedDmg);
             $(".statBoard2").text("Total Damage Dealt: " + augmentedCarapace);
             $(".statBoard3").text("Original Dmg Received: " + enemyCharAtk);
             $(".statBoard4").text("Reduced Dmg Received: " + reducedDmgStat);
             $(".statBoard5").text("Original Dmg Dealt: " + heroCharAtk);
             $(".statBoard6").text("Reduced Dmg Dealt: " + augmentedCarapace);
+            $(".statBoard7").text("Energy Depleted: 1");
             }
             //Check win/loss condition
             checkWinLoss();
@@ -895,13 +911,14 @@ $(document).ready(function() {
             enemyDmgTaken = enemyHp - 0;
             dmgTaken = playerHp - 0;
             //Update stat board
-            $(".statBoard0").text("");
+            $(".statBoard0").text("NOT ENOUGH ENERGY");
             $(".statBoard1").text("You need more energy to perform this ability.");
             $(".statBoard2").text("Select a different ability.");
             $(".statBoard3").text("");
             $(".statBoard4").text("");
             $(".statBoard5").text("");
             $(".statBoard6").text("");
+            $(".statBoard7").text("");
             }
             else
             {
@@ -941,13 +958,14 @@ $(document).ready(function() {
             $("#enemy").attr("hp", enemyDmgTaken);
             var enemyDiv = $("#enemy").children();
             $(enemyDiv[2]).text("HP: " + enemyDmgTaken + " / " + enemyMaxHp);
-            $(".statBoard0").text("");
+            $(".statBoard0").text("REGENERATE");
             $(".statBoard1").text("Total Damage Received: " + enemyCharAtk);
             $(".statBoard2").text("Total Damage Dealt: " + 0);
             $(".statBoard3").text("Healing Received: " + regenerate);
-            $(".statBoard4").text("");
+            $(".statBoard4").text("Energy Depleted: 3");
             $(".statBoard5").text("");
             $(".statBoard6").text("");
+            $(".statBoard7").text("");
             }
             //Check win/loss condition
             checkWinLoss();
@@ -1007,13 +1025,14 @@ $(document).ready(function() {
             $("#enemy").attr("hp", enemyDmgTaken);
             var enemyDiv = $("#enemy").children();
             $(enemyDiv[2]).text("HP: " + enemyDmgTaken + " / " + enemyMaxHp);
-            $(".statBoard0").text("");
+            $(".statBoard0").text("BASIC ATTACK");
             $(".statBoard1").text("Total Damage Received: " + enemyCharAtk);
             $(".statBoard2").text("Total Damage Dealt: " + heroCharAtk);
-            $(".statBoard3").text("");
+            $(".statBoard3").text("Energy Replenished: 1");
             $(".statBoard4").text("");
             $(".statBoard5").text("");
             $(".statBoard6").text("");
+            $(".statBoard7").text("");
             //Check win/loss condition
             checkWinLoss();
             }
@@ -1052,13 +1071,14 @@ $(document).ready(function() {
             enemyDmgTaken = enemyHp - 0;
             dmgTaken = playerHp - 0;
             //Update stat board
-            $(".statBoard0").text("");
+            $(".statBoard0").text("NOT ENOUGH ENERGY");
             $(".statBoard1").text("You need more energy to perform this ability.");
             $(".statBoard2").text("Select a different ability.");
             $(".statBoard3").text("");
             $(".statBoard4").text("");
             $(".statBoard5").text("");
             $(".statBoard6").text("");
+            $(".statBoard7").text("");
             }
             else
             {
@@ -1099,13 +1119,14 @@ $(document).ready(function() {
             $("#enemy").attr("hp", enemyDmgTaken);
             var enemyDiv = $("#enemy").children();
             $(enemyDiv[2]).text("HP: " + enemyDmgTaken + " / " + enemyMaxHp);
-            $(".statBoard0").text("");
+            $(".statBoard0").text("SHADOW FURY");
             $(".statBoard1").text("Total Damage Received: " + enemyCharAtk);
             $(".statBoard2").text("Total Damage Dealt: " + shadowFuryTotalDmg);
             $(".statBoard3").text("Shadow Fury Strikes: " + shadowFuryStrikes);
             $(".statBoard4").text("Damage Per Strike: " + shadowFuryStrikeDmg);
-            $(".statBoard5").text("");
+            $(".statBoard5").text("Energy Depleted: 2");
             $(".statBoard6").text("");
+            $(".statBoard7").text("");
             }
             //Check win/loss condition
             checkWinLoss();
@@ -1153,13 +1174,14 @@ $(document).ready(function() {
             enemyDmgTaken = enemyHp - 0;
             dmgTaken = playerHp - 0;
             //Update stat board
-            $(".statBoard0").text("");
+            $(".statBoard0").text("NOT ENOUGH ENERGY");
             $(".statBoard1").text("You need more energy to perform this ability.");
             $(".statBoard2").text("Select a different ability.");
             $(".statBoard3").text("");
             $(".statBoard4").text("");
             $(".statBoard5").text("");
             $(".statBoard6").text("");
+            $(".statBoard7").text("");
             }
             else
             {
@@ -1198,13 +1220,14 @@ $(document).ready(function() {
             $("#enemy").attr("hp", enemyDmgTaken);
             var enemyDiv = $("#enemy").children();
             $(enemyDiv[2]).text("HP: " + enemyDmgTaken + " / " + enemyMaxHp);
-            $(".statBoard0").text("");
+            $(".statBoard0").text("VOID SURGE");
             $(".statBoard1").text("Total Damage Received: " + enemyCharAtk);
             $(".statBoard2").text("Total Damage Dealt: " + heroCharAtkIncrement);
             $(".statBoard3").text("Damage Dealt: " + heroCharAtk);
             $(".statBoard4").text("Charges: " + attackClick);
             $(".statBoard5").text("Incremented Damage: " + heroCharAtkIncrementStat);
-            $(".statBoard6").text("");
+            $(".statBoard6").text("Energy Depleted: 1");
+            $(".statBoard7").text("");
             }
             //Check win/loss condition
             checkWinLoss();
@@ -1243,13 +1266,14 @@ $(document).ready(function() {
             enemyDmgTaken = enemyHp - 0;
             dmgTaken = playerHp - 0;
             //Update stat board
-            $(".statBoard0").text("");
+            $(".statBoard0").text("NOT ENOUGH ENERGY");
             $(".statBoard1").text("You need more energy to perform this ability.");
             $(".statBoard2").text("Select a different ability.");
             $(".statBoard3").text("");
             $(".statBoard4").text("");
             $(".statBoard5").text("");
             $(".statBoard6").text("");
+            $(".statBoard7").text("");
             }
             else
             {
@@ -1286,13 +1310,14 @@ $(document).ready(function() {
             $("#enemy").attr("hp", enemyDmgTaken);
             var enemyDiv = $("#enemy").children();
             $(enemyDiv[2]).text("HP: " + enemyDmgTaken + " / " + enemyMaxHp);
-            $(".statBoard0").text("");
+            $(".statBoard0").text("EVASION");
             $(".statBoard1").text("Total Damage Received: " + 0);
             $(".statBoard2").text("Total Damage Dealt: " + 0);
             $(".statBoard3").text("Healing Received: " + 15);
-            $(".statBoard4").text("");
+            $(".statBoard4").text("Energy Depleted: 1");
             $(".statBoard5").text("");
             $(".statBoard6").text("");
+            $(".statBoard7").text("");
             }
             //Check win/loss condition
             checkWinLoss();
@@ -1325,6 +1350,7 @@ $(document).ready(function() {
                 $(".statBoard4").text("");
                 $(".statBoard5").text("");
                 $(".statBoard6").text("");
+                $(".statBoard7").text("");
                 if(totalEnemies === 1)
                 {
                     //Remove enemyBox div when last enemy is chosen
@@ -1402,6 +1428,7 @@ $(document).ready(function() {
             $(".statBoard4").text("");
             $(".statBoard5").text("");
             $(".statBoard6").text("");
+            $(".statBoard7").text("");
             $(reset).on("click", function(){
                 window.location.reload();
             })
@@ -1433,19 +1460,36 @@ $(document).ready(function() {
                 $(".statBoard4").text("");
                 $(".statBoard5").text("");
                 $(".statBoard6").text("");
+                $(".statBoard7").text("");
                 $(reset).on("click", function(){
                     window.location.reload();
                 })
             }
             else
             {
+            //Reset Health and Counters
+            var playerHp = ($("#player").attr("hp"));
+            var playerMaxHp = ($("#player").attr("max-hp"));
+            playerHp = playerMaxHp;
+            var playerEnergy = ($("#player").attr("energy"));
+            var playerMaxEnergy = 5;
+            playerEnergy = playerMaxEnergy;
+            //Use jquery to update Char Hp/Energy
+            $("#player").attr("energy", playerEnergy);
+            $("#player").attr("hp", playerHp);
+            //Use jquery to show new hp on html
+            var playerDiv = $("#player").children();
+            $(playerDiv[3]).text("Energy: " + playerEnergy + " /  " + playerMaxEnergy)
+            $(playerDiv[2]).text("HP: " + playerHp + " / " + playerMaxHp);
+            //Update statboard
             $(".statBoard0").text("");
-            $(".statBoard1").text("Enemy defeated.");
-            $(".statBoard2").text("Select a new enemy.");
-            $(".statBoard3").text("");
+            $(".statBoard1").text("Enemy defeated!");
+            $(".statBoard2").text("Your health and energy have been replenished.");
+            $(".statBoard3").text("Select a new enemy.");
             $(".statBoard4").text("");
             $(".statBoard5").text("");
             $(".statBoard6").text("");
+            $(".statBoard7").text("");
             }
         }
     }
@@ -1454,13 +1498,3 @@ $(document).ready(function() {
 //=============================================================================
     main()
 })
-
-
-// var isBodyClicked = false;
-// function myFunction() {
-//   if(isBodyClicked === false){
-//     window.open("http://www.w3schools.com");
-//     document.body.removeEventListener('click', myFunction);
-//   }
-//   isBodyClicked = true;
-// }

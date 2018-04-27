@@ -1138,14 +1138,6 @@ $(document).ready(function() {
             //VOID SURGE
             if(enemySelected === true)
             {
-            var audio = $("objSound");
-            var audioElement = document.createElement("audio");
-            //Link sound file to element
-            audioElement.src = "assets/sound/darkTemplarSpecial2.mp3";
-            //Set autoplay to true
-            audioElement.autoplay = true;
-            //Append variable to html
-            audio.append(audioElement);
             attackClick++
             //THIS ATTACK INCREMENTS DAMAGE EACH TIME USED.
             //======================================================================
@@ -1188,7 +1180,7 @@ $(document).ready(function() {
             var audio = $("objSound");
             var audioElement = document.createElement("audio");
             //Link sound file to element
-            audioElement.src = "assets/sound/darkTemplarSpecial1.mp3";
+            audioElement.src = "assets/sound/darkTemplarSpecial2.mp3";
             //Set autoplay to true
             audioElement.autoplay = true;
             //Append variable to html

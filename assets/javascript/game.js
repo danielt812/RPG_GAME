@@ -34,6 +34,14 @@ $(document).ready(function() {
     //==================================================================
     function main()
     {
+        var audio = $("objSound");
+        var audioElement = document.createElement("audio");
+        //Link sound file to element
+        audioElement.src = "assets/sound/backgroundMusic.mp3";
+        //Set autoplay to true
+        audioElement.autoplay = true;
+        //Append variable to html
+        audio.append(audioElement);
         //Make changes to html text
         $("#statBoard").text("StarCraft Arena");
         $(".statBoard1").text("Welcome to StarCraft Arena!");

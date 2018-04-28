@@ -521,8 +521,7 @@ $(document).ready(function() {
                         var enemyDmgTaken = enemyHp;
                         $("#enemy").attr("hp", enemyDmgTaken);
                         var enemyDiv = $("#enemy").children();
-                        $(enemyDiv[2]).text("HP: " + enemyDmgTaken + " / " + enemyMaxHp);
-                    
+                        $(enemyDiv[2]).text("HP: " + enemyDmgTaken + " / " + enemyMaxHp);                   
                         $(".statBoard0").text("EXPLOSIVE CHARGE");
                         $(".statBoard1").text("Total Damage Received: " + enemyCharAtk);
                         $(".statBoard2").text("Total Damage Dealt: " + 0);
@@ -1456,6 +1455,7 @@ $(document).ready(function() {
                 $(".statBoard0").text("");
                 $(".statBoard1").text("YOU ARE VICTORIOUS!");
                 $(".statBoard2").text("WOULD YOU LIKE TO PLAY AGAIN?");
+                $(".statBoard3").text("")
                 $(".statBoard3").append(reset);
                 $(".statBoard4").text("");
                 $(".statBoard5").text("");

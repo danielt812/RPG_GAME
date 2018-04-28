@@ -18,9 +18,9 @@ $(document).ready(function() {
     {
         name: ['Ghost', 'Dark Templar', 'Hydralisk'],
         image: ['ghost', 'darkTemplar', 'hydralisk'],
-        hp: [100, 120, 80],
+        hp: [100, 120, 90],
         //shield: [null, 40, null],
-        attack: [10, 8, 12],
+        attack: [12, 8, 14],
         energy: [5, 5, 5],
     }
     var specialAttackClick = 0;

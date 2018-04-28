@@ -120,6 +120,7 @@ $(document).ready(function() {
             $("#statBoard").text("ABILITIES");
             $("#enemyBox").text("ENEMIES");
             $("#enemyBox").css({"border": "solid"});
+            $("#enemyBox").css({"border-color": "aliceblue"})
             $("#enemyBox").css({"width": "100%"});
             //Change statBoard
             if(selectedChar === "Ghost")
@@ -182,6 +183,7 @@ $(document).ready(function() {
             //Prompt user to choose enemy for defender div
             $("#defender").text("SELECT DEFENDER")
             $("#defender").css({"border": "solid"})
+            $("#defender").css({"border-color": "aliceblue"})
             //Change color of selected character to green
             $(".selectChar").children().css({"border-color": "blue"});
             //Change color of enemies to red
@@ -1428,6 +1430,9 @@ $(document).ready(function() {
         //Win condition
         else if(parseInt(enemyHp) <= 0)
         {
+            //Reset Global Variables
+            specialAttackClick = 0
+            attackClick = -1
             var playerDiv = $("#enemy").children();
             $(playerDiv[2]).css({"color": "red"});
             $(playerDiv[2]).text("Killed In Action");

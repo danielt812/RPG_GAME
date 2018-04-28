@@ -41,6 +41,7 @@ body {
     border-style: solid;
     border-color: aliceblue;
     font-family: orbitron_font;
+    padding: 10px;
 }
 .statBoard1 {
     margin-top: 20px;

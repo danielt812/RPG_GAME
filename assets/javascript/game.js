@@ -522,7 +522,7 @@ $(document).ready(function() {
                         $("#enemy").attr("hp", enemyDmgTaken);
                         var enemyDiv = $("#enemy").children();
                         $(enemyDiv[2]).text("HP: " + enemyDmgTaken + " / " + enemyMaxHp);
-                        }
+                    
                         $(".statBoard0").text("EXPLOSIVE CHARGE");
                         $(".statBoard1").text("Total Damage Received: " + enemyCharAtk);
                         $(".statBoard2").text("Total Damage Dealt: " + 0);
@@ -533,6 +533,7 @@ $(document).ready(function() {
                         $(".statBoard7").text("");
                         //Check win/loss condition
                         checkWinLoss();
+                    }
                 }
             }
 

@@ -1411,6 +1411,7 @@ $(document).ready(function() {
             $("#graveYardBox").text("GRAVEYARD");
             $("#graveYardBox").css({"border": "solid"});
             $("#graveYardBox").css({"width": "100%"})
+            $("#graveYardBox").css({"border-color": "aliceblue"})
             $(".defeated").append($("#enemy"));
 
             $("#statBoard").text("GAME OVER");
@@ -1440,6 +1441,7 @@ $(document).ready(function() {
             $("#graveYardBox").text("GRAVEYARD");
             $("#graveYardBox").css({"border": "solid"});
             $("#graveYardBox").css({"width": "100%"})
+            $("#graveYardBox").css({"border-color": "aliceblue"})
             $(".defeated").append($("#enemy"));
             enemySelected = false;
             totalEnemies--;

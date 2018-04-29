@@ -2,7 +2,7 @@ $(document).ready(function() {
     // FUNCTION GLOSSARY
     //===================================================================
     //--main()--> Starts game and builds characters
-    //--playerChoose()--> Selects player's character and places them into div
+    //--selectPlayer()--> Selects player's character and places them into div
     //--chooseEnemy()--> Selects enemy and places them into div
     //--playerAbilities()--> Creates buttons for each character
     //--ghostAttacks()--> Sets values for all ghost attacks
@@ -109,12 +109,12 @@ $(document).ready(function() {
             // }
             $(".characters").append(unit);
         }
-        playerChoose();
+        selectPlayer();
     }
 
     //============================================================================
 
-    function playerChoose()
+    function selectPlayer()
     {
         $("body").one("click", ".units", function()
         {
@@ -167,7 +167,7 @@ $(document).ready(function() {
                 $(".statBoard2").text("Basic Attack: Do base damage. Gain 1 energy.");
                 $(".statBoard3").text("Shadow Fury: Do random number of attacks with random damage value. Lose 2 energy.");
                 $(".statBoard4").text("Void Surge: Increment damage output after each time used. Lose 1 energy.");
-                $(".statBoard5").text("Evasion: Take no damage. Deal no damage. Gain 15 life. Lose 2 energy.");
+                $(".statBoard5").text("Evasion: Take no damage. Deal no damage. Gain 15 life. Lose 3 energy.");
                 $(".statBoard6").text("Choose an enemy.");
                 $(".statBoard7").text("");
             }
@@ -1100,9 +1100,9 @@ $(document).ready(function() {
                 var playerEnergy = ($("#player").attr("energy"));
                 var playerMaxEnergy = 5;
                 //Subtract energy for ability
-                var updatePlayerEnergy = parseInt(playerEnergy) - 2;
+                var updatePlayerEnergy = parseInt(playerEnergy) - 3;
                 //Check if player has enough energy to use ability
-                if (parseInt(playerEnergy) < 2)
+                if (parseInt(playerEnergy) < 3)
                 {
                     //Not enough energy sound file here
                     playSound("assets/sound/darkTemplarEnergy.mp3");
@@ -1122,11 +1122,12 @@ $(document).ready(function() {
                 else
                 {
                     playSound("assets/sound/darkTemplarHeal.mp3");
-                    //Make sure life total doesn't exceed max hp
+                    
                     //Enemies attack value
                     var enemyCharAtk = Math.floor(7 + Math.random() * 13);
                     //Add 15 life to playerHp
                     var evasion = parseInt(playerHp) + 15;
+                    //Make sure life total doesn't exceed max hp
                     if (evasion > playerMaxHp)
                     {
                         evasion = playerMaxHp;
@@ -1154,7 +1155,7 @@ $(document).ready(function() {
                     $(".statBoard1").text("Total Damage Received: " + 0);
                     $(".statBoard2").text("Total Damage Dealt: " + 0);
                     $(".statBoard3").text("Healing Received: " + 15);
-                    $(".statBoard4").text("Energy Depleted: 1");
+                    $(".statBoard4").text("Energy Depleted: 3");
                     $(".statBoard5").text("");
                     $(".statBoard6").text("");
                     $(".statBoard7").text("");

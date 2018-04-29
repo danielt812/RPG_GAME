@@ -19,9 +19,9 @@ $(document).ready(function() {
     {
         name: ['Ghost', 'Dark Templar', 'Hydralisk'],
         image: ['ghost', 'darkTemplar', 'hydralisk'],
-        hp: [100, 120, 90],
+        hp: [100, 110, 90],
         //shield: [null, 40, null],
-        attack: [12, 8, 14],
+        attack: [12, 8, 13],
         energy: [5, 5, 5],
     }
     var specialAttackClick = 0;
@@ -38,7 +38,20 @@ $(document).ready(function() {
     //==================================================================
     function main()
     {
-        playSound("assets/sound/backgroundMusic.mp3");
+        //Play random background music
+        var musicSelect = Math.floor(Math.random() * 3 + 1);
+        if (musicSelect === 1)
+        {
+            playSound("assets/sound/terranBackground.mp3");
+        }
+        else if (musicSelect === 2)
+        {
+            playSound("assets/sound/protossBackground.mp3");
+        }
+        else if (musicSelect === 3)
+        {
+            playSound("assets/sound/zergBackground.mp3");
+        }
         //Make changes to html text
         $("#statBoard").text("StarCraft Arena");
         $(".statBoard1").text("Welcome to StarCraft Arena!");
@@ -260,7 +273,7 @@ $(document).ready(function() {
                     playerEnergy++;
                 }
                 //Enemies attack value
-                var enemyCharAtk = Math.floor(6 + Math.random() * 11);
+                var enemyCharAtk = Math.floor(7 + Math.random() * 13);
                 //Subtracting HP from enemy attack value
                 var dmgTaken = playerHp - enemyCharAtk;
                 //Use jquery to update Char Hp/Energy after each attack
@@ -315,7 +328,6 @@ $(document).ready(function() {
                 //Check if player has enough energy to use ability
                 if (parseInt(playerEnergy) < 2)
                 {
-                    //Not enough energy sound file here
                     playSound("assets/sound/ghostEnergy.mp3");
                     //No Damage for either player
                     enemyDmgTaken = enemyHp - 0;
@@ -333,7 +345,7 @@ $(document).ready(function() {
                 else
                 {
                     //Enemies attack value
-                    var enemyCharAtk = Math.floor(6 + Math.random() * 11);
+                    var enemyCharAtk = Math.floor(7 + Math.random() * 13);
                     //Add 10 static damage to enemyCharAtk
                     var stimpackDamageTaken = enemyCharAtk + 10;
                     //Subtracting HP from enemy attack value
@@ -415,7 +427,7 @@ $(document).ready(function() {
                 else
                 {
                     //Enemies attack value
-                    var enemyCharAtk = Math.floor(6 + Math.random() * 11);
+                    var enemyCharAtk = Math.floor(7 + Math.random() * 13);
                     //Subtract HP from enemy attack value
                     var dmgTaken = playerHp - enemyCharAtk;
                     //Use jquery to update Char Hp/Energy after each attack
@@ -434,7 +446,7 @@ $(document).ready(function() {
                     var heroCharAtk = $("#player").attr("attack");
                     var chargesNeeded = 3 - specialAttackClick;
                     //Special attack random number
-                    var explosiveChargeRandNum = Math.floor(20 + Math.random() * 51)
+                    var explosiveChargeRandNum = Math.floor(30 + Math.random() * 19 + 1)
                     var explosiveChargeDamage = explosiveChargeRandNum;
                     if(specialAttackClick === 3)
                     {
@@ -451,9 +463,6 @@ $(document).ready(function() {
                         $(".statBoard5").text("Energy Depleted: 1");
                         $(".statBoard6").text("");
                         $(".statBoard7").text("");
-                        console.log("Charges: " + specialAttackClick);
-                        console.log("Damage Dealt: " + explosiveChargeDamage);
-                        console.log("Damage Received: " + enemyCharAtk);
                         //Check win/loss condition
                         checkWinLoss();
                         specialAttackClick = 0
@@ -486,7 +495,7 @@ $(document).ready(function() {
             //CLOAK
             if(enemySelected === true)
             {
-                audioPlay("assets/sound/ghostHeal.mp3");
+                playSound("assets/sound/ghostHeal.mp3");
                 //THIS ABILITY PREVENTS DAMAGE FOR TURN AND HITS FOR BASE DAMAGE
                 //======================================================================
                 //YOUR CHARACTER
@@ -502,7 +511,7 @@ $(document).ready(function() {
                 if (parseInt(playerEnergy) < 2)
                 {
                     //Not enough energy sound file here
-                    playerSound("assets/sound/ghostEnergy.mp3");
+                    playSound("assets/sound/ghostEnergy.mp3");
                     //No Damage for either player
                     enemyDmgTaken = enemyHp - 0;
                     dmgTaken = playerHp - 0;
@@ -519,7 +528,7 @@ $(document).ready(function() {
                 else
                 {
                     //Enemies attack value
-                    var enemyCharAtk = Math.floor(6 + Math.random() * 11);
+                    var enemyCharAtk = Math.floor(7 + Math.random() * 13);
                     //Subtracting HP from enemy attack value
                     var dmgTaken = playerHp - 0;
                     //Use jquery to update Char Hp/Energy after each attack
@@ -580,7 +589,7 @@ $(document).ready(function() {
                     playerEnergy++;
                 }
                 //Enemies attack value
-                var enemyCharAtk = Math.floor(6 + Math.random() * 11);
+                var enemyCharAtk = Math.floor(7 + Math.random() * 13);
                 //Subtracting HP from enemy attack value
                 var dmgTaken = playerHp - enemyCharAtk;
                 //Use jquery to update Char Hp/Energy after each attack
@@ -597,8 +606,6 @@ $(document).ready(function() {
                 var enemyHp = ($("#enemy").attr("hp"));
                 //Player attack value
                 var heroCharAtk = $("#player").attr("attack");
-                //Increment hero attack here
-                var heroCharAtkIncrement = parseInt(heroCharAtk) + attackClick * 8;
                 //Damage defender takes
                 var enemyDmgTaken = enemyHp - heroCharAtk;
                 $("#enemy").attr("hp", enemyDmgTaken);
@@ -656,7 +663,7 @@ $(document).ready(function() {
                 {
                     playSound("assets/sound/hydraliskSpecial1.mp3");
                     //Enemies attack value
-                    var enemyCharAtk = Math.floor(6 + Math.random() * 11);
+                    var enemyCharAtk = Math.floor(7 + Math.random() * 13);
                     //Subtracting HP from enemy attack value
                     var dmgTaken = playerHp - enemyCharAtk * 2;
                     //Use jquery to update Char Hp/Energy after each attack
@@ -698,7 +705,7 @@ $(document).ready(function() {
 
         $("#hydraliskSpecial2").on("click", function()
         {
-            //Augmented Carapace
+            //AUGMENTED CARAPACE
             if(enemySelected === true)
             {
                 //THIS ATTACK DOES LESS DAMAGE, DAMAGE TAKEN REDUCED
@@ -734,7 +741,7 @@ $(document).ready(function() {
                 {
                     playSound("assets/sound/hydraliskSpecial2.mp3");
                     //Enemies attack value
-                    var enemyCharAtk = Math.floor(6 + Math.random() * 11);
+                    var enemyCharAtk = Math.floor(7 + Math.random() * 13);
                     var reducedDmg = enemyCharAtk / 2;
                     var reducedDmgStat = enemyCharAtk - reducedDmg
                     //Subtracting HP from enemy attack value
@@ -753,8 +760,9 @@ $(document).ready(function() {
                     var enemyHp = ($("#enemy").attr("hp"));
                     //Player attack value
                     var heroCharAtk = $("#player").attr("attack");
-                    //Increment hero attack here
-                    var augmentedCarapace = parseInt(heroCharAtk) / 2;
+                    //Reduce Damage taken by half
+                    var augmentedCarapace = 10;//parseInt(heroCharAtk) / 2;
+                    console.log(augmentedCarapace)
                     //Damage defender takes
                     var enemyDmgTaken = enemyHp - augmentedCarapace;
                     $("#enemy").attr("hp", enemyDmgTaken);
@@ -813,11 +821,11 @@ $(document).ready(function() {
                 {
                     playSound("assets/sound/hydraliskHeal.mp3");
                     //Enemies attack value
-                    var enemyCharAtk = Math.floor(6 + Math.random() * 11);
+                    var enemyCharAtk = Math.floor(7 + Math.random() * 13);
                     //Subtracting HP from enemy attack value
                     var dmgTaken = playerHp - enemyCharAtk;
                     //Generate random number to heal
-                    var regenerate = Math.floor(10 + Math.random() * 21);
+                    var regenerate = Math.floor(15 + Math.random() * 15);
                     //Add regenerate value and playerHp
                     var regenerateHeal = parseInt(playerHp) + regenerate;
                     if (regenerateHeal > playerMaxHp)
@@ -882,7 +890,7 @@ $(document).ready(function() {
                     playerEnergy++;
                 }
                 //Enemies attack value
-                var enemyCharAtk = Math.floor(6 + Math.random() * 11);
+                var enemyCharAtk = Math.floor(7 + Math.random() * 13);
                 //Subtracting HP from enemy attack value
                 var dmgTaken = playerHp - enemyCharAtk;
                 //Use jquery to update Char Hp/Energy after each attack
@@ -956,7 +964,7 @@ $(document).ready(function() {
                 {
                     playSound("assets/sound/darkTemplarSpecial1.mp3");
                     //Enemies attack value
-                    var enemyCharAtk = Math.floor(6 + Math.random() * 11);
+                    var enemyCharAtk = Math.floor(7 + Math.random() * 13);
                     //Subtracting HP from enemy attack value
                     var dmgTaken = playerHp - enemyCharAtk;
                     //Use jquery to update Char Hp/Energy after each attack
@@ -1037,7 +1045,7 @@ $(document).ready(function() {
                 {
                     playSound("assets/sound/darkTemplarSpecial2.mp3");
                     //Enemies attack value
-                    var enemyCharAtk = Math.floor(6 + Math.random() * 11);
+                    var enemyCharAtk = Math.floor(7 + Math.random() * 13);
                     //Subtracting HP from enemy attack value
                     var dmgTaken = playerHp - enemyCharAtk;
                     //Use jquery to update Char Hp/Energy after each attack
@@ -1116,7 +1124,7 @@ $(document).ready(function() {
                     playSound("assets/sound/darkTemplarHeal.mp3");
                     //Make sure life total doesn't exceed max hp
                     //Enemies attack value
-                    var enemyCharAtk = Math.floor(6 + Math.random() * 11);
+                    var enemyCharAtk = Math.floor(7 + Math.random() * 13);
                     //Add 15 life to playerHp
                     var evasion = parseInt(playerHp) + 15;
                     if (evasion > playerMaxHp)
@@ -1210,20 +1218,21 @@ $(document).ready(function() {
     {
         var playerHp = ($("#player").attr("hp"));
         var enemyHp = ($("#enemy").attr("hp"));
+        var playerName = ($("#player").attr("name"));
+        var enemyName = ($("#enemy").attr("name"));
         //Lose condition
         if(parseInt(playerHp) <= 0)
         {
             var audioSrc = "";
-            var selectedChar = $(".selectChar").children().attr("name");
-            if(selectedChar === "Ghost")
+            if(playerName === "Ghost")
             {
                 audioSrc = "assets/sound/ghostDeath.mp3";
             }
-            else if(selectedChar === "Hydralisk")
+            else if(playerName === "Hydralisk")
             {
                 audioSrc = "assets/sound/hydraliskDeath.mp3";
             }
-            else if(selectedChar === "Dark Templar")
+            else if(playerName === "Dark Templar")
             {
                 audioSrc = "assets/sound/darkTemplarDeath.mp3";
             }
@@ -1261,6 +1270,18 @@ $(document).ready(function() {
         //Win condition
         else if(parseInt(enemyHp) <= 0)
         {
+            if(enemyName === "Ghost")
+            {
+                playSound("assets/sound/ghostDeath.mp3")
+            }
+            else if(enemyName === "Hydralisk")
+            {
+                playSound("assets/sound/hydraliskDeath.mp3")
+            }
+            else if(enemyName === "Dark Templar")
+            {
+                playSound("assets/sound/darkTemplarDeath.mp3")
+            }
             //Reset Global Variables
             specialAttackClick = 0;
             attackClick = -1;

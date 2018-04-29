@@ -39,10 +39,16 @@ body {
     margin-top: 20px;
     width: 262px;
     border-style: solid;
-    border-color: aliceblue;
+    border-color: black;
+    border-width: 2px;
     font-family: orbitron_font;
     padding: 10px;
 }
+
+.statBoard0 {
+    margin-top: 20px;
+}
+
 .statBoard1 {
     margin-top: 20px;
 }
@@ -67,6 +73,10 @@ body {
     margin-top: 20px;
 }
 
+.statBoard7 {
+    margin-top: 20px;
+}
+
 h2 {
     font-family: sc_font;
     background: linear-gradient(to right, darkgray, aliceblue);
@@ -79,6 +89,7 @@ h2 {
     width: 262px;
     border-style: solid;
     border-color: aliceblue;
+    border-width: 2px;
     text-align: center;
 }
 

@@ -665,7 +665,8 @@ $(document).ready(function() {
                     //Enemies attack value
                     var enemyCharAtk = Math.floor(7 + Math.random() * 13);
                     //Subtracting HP from enemy attack value
-                    var dmgTaken = playerHp - enemyCharAtk * 2;
+                    var dmgDouble = enemyCharAtk * 2;
+                    var dmgTaken = playerHp - dmgDouble;
                     //Use jquery to update Char Hp/Energy after each attack
                     $("#player").attr("hp", dmgTaken);
                     $("#player").attr("energy", updatePlayerEnergy)
@@ -689,7 +690,7 @@ $(document).ready(function() {
                     var enemyDiv = $("#enemy").children();
                     $(enemyDiv[2]).text("HP: " + enemyDmgTaken + " / " + enemyMaxHp);
                     $(".statBoard0").text("SPINE FLURRY");
-                    $(".statBoard1").text("Total Damage Received: " + enemyCharAtk);
+                    $(".statBoard1").text("Total Damage Received: " + dmgDouble);
                     $(".statBoard2").text("Total Damage Dealt: " + spineFlurryDmg);
                     $(".statBoard3").text("Spines Generated: " + spineFlurryRandNum);
                     $(".statBoard4").text("Damage Per Spine: " + heroCharAtk);

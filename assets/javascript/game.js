@@ -123,7 +123,7 @@ $(document).ready(function() {
             //Change statBoard
             if(selectedChar === "Ghost")
             {
-                playSound("assets/sound/terranBackground.mp3");
+                playMusic("assets/sound/terranBackground.mp3");
                 playSound("assets/sound/ghostSelect.mp3");
                 $(".statBoard0").text("Character Selected: " + selectedChar);
                 $(".statBoard1").text("Race: TERRAN");
@@ -136,7 +136,7 @@ $(document).ready(function() {
             }
             else if(selectedChar === "Hydralisk")
             {
-                playSound("assets/sound/zergBackground.mp3");
+                playMusic("assets/sound/zergBackground.mp3");
                 playSound("assets/sound/hydraliskSelect.mp3");
                 $(".statBoard0").text("Character Selected: " + selectedChar);
                 $(".statBoard1").text("Race: ZERG");
@@ -149,7 +149,7 @@ $(document).ready(function() {
             }
             else if(selectedChar === "Dark Templar")
             {
-                playSound("assets/sound/protossBackground.mp3");
+                playMusic("assets/sound/protossBackground.mp3");
                 playSound("assets/sound/darkTemplarSelect.mp3");
                 $(".statBoard0").text("Character Selected: " + selectedChar);
                 $(".statBoard1").text("Race: PROTOSS");
@@ -1193,16 +1193,22 @@ $(document).ready(function() {
         })
     }
 
-    function playSound(audioSrc)
+    function playMusic(audioSrc)
     {
-        var audio = $("objSound");
-        var audioElement = document.createElement("audio");
+        var audioElement = document.getElementById("music");
         //Link sound file to element
         audioElement.src = audioSrc;
         //Set autoplay to true
         audioElement.autoplay = true;
-        //Append variable to html
-        audio.append(audioElement);
+    }
+
+    function playSound(audioSrc)
+    {
+        var audioElement = document.getElementById("playerSounds");
+        //Link sound file to element
+        audioElement.src = audioSrc;
+        //Set autoplay to true
+        audioElement.autoplay = true;
     }
 
     function checkWinLoss()
@@ -1217,15 +1223,18 @@ $(document).ready(function() {
             var audioSrc = "";
             if(playerName === "Ghost")
             {
-                audioSrc = "assets/sound/ghostDeath.mp3";
+                playSound("assets/sound/ghostDeath.mp3");
+                playMusic("assets/sound/terranDefeat.mp3");
             }
             else if(playerName === "Hydralisk")
             {
-                audioSrc = "assets/sound/hydraliskDeath.mp3";
+                playSound("assets/sound/hydraliskDeath.mp3");
+                playMusic("assets/sound/zergDefeat.mp3");
             }
             else if(playerName === "Dark Templar")
             {
-                audioSrc = "assets/sound/darkTemplarDeath.mp3";
+                playSound("assets/sound/darkTemplarDeath.mp3");
+                playMusic("assets/sound/protossDefeat.mp3");
             }
             playSound(audioSrc);
             var reset = $("<button>");
@@ -1263,15 +1272,15 @@ $(document).ready(function() {
         {
             if(enemyName === "Ghost")
             {
-                playSound("assets/sound/ghostDeath.mp3")
+                playSound("assets/sound/ghostDeath.mp3");
             }
             else if(enemyName === "Hydralisk")
             {
-                playSound("assets/sound/hydraliskDeath.mp3")
+                playSound("assets/sound/hydraliskDeath.mp3");
             }
             else if(enemyName === "Dark Templar")
             {
-                playSound("assets/sound/darkTemplarDeath.mp3")
+                playSound("assets/sound/darkTemplarDeath.mp3");
             }
             //Reset Global Variables
             specialAttackClick = 0;
@@ -1290,6 +1299,18 @@ $(document).ready(function() {
             //Update statboard
             if(totalEnemies === 0)
             {
+                if(playerName === "Ghost")
+                {
+                    playMusic("assets/sound/terranVictory.mp3");
+                }
+                else if(playerName === "Hydralisk")
+                {
+                    playMusic("assets/sound/zergVictory.mp3");
+                }
+                else if(playerName === "Dark Templar")
+                {
+                    playMusic("assets/sound/protossVictory.mp3");
+                }
                 var reset = $("<button>");
                 reset.attr("id", "resetButton");
                 reset.text("YES");

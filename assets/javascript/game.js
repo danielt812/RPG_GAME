@@ -38,20 +38,6 @@ $(document).ready(function() {
     //==================================================================
     function main()
     {
-        //Play random background music
-        var musicSelect = Math.floor(Math.random() * 3 + 1);
-        if (musicSelect === 1)
-        {
-            playSound("assets/sound/terranBackground.mp3");
-        }
-        else if (musicSelect === 2)
-        {
-            playSound("assets/sound/protossBackground.mp3");
-        }
-        else if (musicSelect === 3)
-        {
-            playSound("assets/sound/zergBackground.mp3");
-        }
         //Make changes to html text
         $("#statBoard").text("StarCraft Arena");
         $(".statBoard1").text("Welcome to StarCraft Arena!");
@@ -137,6 +123,7 @@ $(document).ready(function() {
             //Change statBoard
             if(selectedChar === "Ghost")
             {
+                playSound("assets/sound/terranBackground.mp3");
                 playSound("assets/sound/ghostSelect.mp3");
                 $(".statBoard0").text("Character Selected: " + selectedChar);
                 $(".statBoard1").text("Race: TERRAN");
@@ -149,6 +136,7 @@ $(document).ready(function() {
             }
             else if(selectedChar === "Hydralisk")
             {
+                playSound("assets/sound/zergBackground.mp3");
                 playSound("assets/sound/hydraliskSelect.mp3");
                 $(".statBoard0").text("Character Selected: " + selectedChar);
                 $(".statBoard1").text("Race: ZERG");
@@ -161,6 +149,7 @@ $(document).ready(function() {
             }
             else if(selectedChar === "Dark Templar")
             {
+                playSound("assets/sound/protossBackground.mp3");
                 playSound("assets/sound/darkTemplarSelect.mp3");
                 $(".statBoard0").text("Character Selected: " + selectedChar);
                 $(".statBoard1").text("Race: PROTOSS");
@@ -1349,5 +1338,5 @@ $(document).ready(function() {
 
 //INITIATE START GAME
 //=============================================================================
-    main();
+main();
 })

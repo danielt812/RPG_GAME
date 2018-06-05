@@ -1169,7 +1169,20 @@ $(document).ready(function() {
                 //Append enemy to defender div
                 $(".defender").append(this);
                 //Give enemy clicked an id to reference later
-                $(this).attr("id","enemy");          
+                $(this).attr("id","enemy");
+                var enemyName = ($("#enemy").attr("name"))
+                if(enemyName === "Ghost")
+                {
+                    playSound("assets/sound/ghostSelect.mp3");
+                }
+                else if(enemyName === "Hydralisk")
+                {
+                    playSound("assets/sound/hydraliskSelect.mp3");
+                }
+                else if(enemyName === "Dark Templar")
+                {
+                    playSound("assets/sound/darkTemplarSelect.mp3");
+                }
                 //Change text to defender
                 $("#defender").text("DEFENDER");
                 //Change instructions
@@ -1220,7 +1233,6 @@ $(document).ready(function() {
         //Lose condition
         if(parseInt(playerHp) <= 0)
         {
-            var audioSrc = "";
             if(playerName === "Ghost")
             {
                 playSound("assets/sound/ghostDeath.mp3");

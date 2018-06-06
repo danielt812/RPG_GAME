@@ -1248,7 +1248,6 @@ $(document).ready(function() {
                 playSound("assets/sound/darkTemplarDeath.mp3");
                 playMusic("assets/sound/protossDefeat.mp3");
             }
-            playSound(audioSrc);
             var reset = $("<button>");
             reset.attr("id", "resetButton");
             reset.text("YES");

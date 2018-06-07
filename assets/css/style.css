@@ -43,6 +43,7 @@ body {
     border-width: 2px;
     font-family: orbitron_font;
     padding: 10px;
+    letter-spacing: 1px;
 }
 
 .statBoard0 {
@@ -79,7 +80,7 @@ body {
 
 h2 {
     font-family: sc_font;
-    background: linear-gradient(to right, darkgray, aliceblue);
+    background: linear-gradient(to right, ivory, grey);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     /* color: aliceblue; */

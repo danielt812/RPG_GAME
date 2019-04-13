@@ -1,57 +1,63 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Starcraft Arena</title>
     <!--Reset-->
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
     <!--Bootstrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
     <!--CSS-->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <!--jQuery-->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    ></script>
     <!--Javasript-->
-    <script src="assets/javascript/game.js"></script>
-</head>
-<body>
+    <script src="assets/javascript/game-min.js"></script>
+  </head>
+  <body>
     <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h2 id="charSelect">SELECT ATTACKER</h2>
-                <div class="selectChar"></div>
-            </div>
-            <div class="col-md-4">
-                <h2 id="statBoard">STATS</h2>
-                <div class="allStatBoards">
-                    <div class="statBoard0"></div>
-                    <div class="statBoard1"></div>
-                    <div class="statBoard2"></div>
-                    <div class="statBoard3"></div>
-                    <div class="statBoard4"></div>
-                    <div class="statBoard5"></div>
-                    <div class="statBoard6"></div>
-                    <div class="statBoard7"></div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <h2 id="defender">DEFENDER</h2>
-                <div class="defender"></div>
-            </div>
+      <div class="row">
+        <div class="col-md-4">
+          <h2 id="charSelect">SELECT ATTACKER</h2>
+          <div class="selectChar"></div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <h2 id="enemyBox">ENEMIES</h2>
-                <div class="enemyChar"></div>
-            </div>
+        <div class="col-md-4">
+          <h2 id="statBoard">STATS</h2>
+          <div class="allStatBoards">
+            <div class="statBoard0"></div>
+            <div class="statBoard1"></div>
+            <div class="statBoard2"></div>
+            <div class="statBoard3"></div>
+            <div class="statBoard4"></div>
+            <div class="statBoard5"></div>
+            <div class="statBoard6"></div>
+            <div class="statBoard7"></div>
+          </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <h2 id="graveYardBox">GRAVEYARD</h2>
-                <div class="defeated"></div>
-            </div>
-            <audio id="playerSounds"></audio>
-            <audio id="music"></audio>
+        <div class="col-md-4">
+          <h2 id="defender">DEFENDER</h2>
+          <div class="defender"></div>
         </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2 id="enemyBox">ENEMIES</h2>
+          <div class="enemyChar"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2 id="graveYardBox">GRAVEYARD</h2>
+          <div class="defeated"></div>
+        </div>
+        <audio id="playerSounds"></audio>
+        <audio id="music"></audio>
+      </div>
     </div>
-</body>
+  </body>
 </html>

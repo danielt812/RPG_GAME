@@ -19,4 +19,4 @@ Highlights:
   <li>Many onClick functions, which do various arithmetic operations</li>
 </ul>
 
-Link: https://danielt812.github.io/StarCraft-RPG/
+Link: https://danielt812.github.io/StarCraft-Game/
